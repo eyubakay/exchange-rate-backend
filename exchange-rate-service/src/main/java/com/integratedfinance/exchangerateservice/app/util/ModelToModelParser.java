@@ -13,6 +13,10 @@ import java.time.LocalDate;
 @Slf4j
 public final class ModelToModelParser {
 
+    private ModelToModelParser() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static ExchangeRate parseFrom(ExchangeRateDto exchangeRate) {
 
         String rates = PayloadUtil.objectToJson(exchangeRate.getRates());

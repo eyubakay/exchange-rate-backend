@@ -9,7 +9,11 @@ import com.integratedfinance.exchangerateservice.app.entity.ExchangeRate;
 /**
  * @author Eyüp Akay
  */
-public class CurrencyConverterUtil {
+public final class CurrencyConverterUtil {
+
+    private CurrencyConverterUtil() {
+        throw new IllegalStateException("Utility class");
+    }
 
     public static Double calculate(String source, String target, ExchangeRate exchangeRate) {
 
