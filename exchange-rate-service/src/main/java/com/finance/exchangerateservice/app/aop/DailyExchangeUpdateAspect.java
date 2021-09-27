@@ -34,7 +34,7 @@ public class DailyExchangeUpdateAspect {
     @Around("@annotation(com.finance.exchangerateservice.app.aop.annotation.DailyExchange)")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
 
-        if (Objects.isNull(exchangeDate)) {
+        if (Objects.isNull(exchangeDate) || LocalDate.now().equals(exchangeDate)) {
             ExchangeRate latest = exchangeRepositoryService.getLatest();
             if (Objects.isNull(latest)) {
                 String ratePayload = exchangeRateProviderService.getExchangeRateJson();
