@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "0da21ddc-d41b-4b19-acb8-bd5b92067d03",
+		"name": "myCollecttion1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "exchange",
+			"item": [
+				{
+					"name": "currencylayer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.exchangeratesapi.io/v1/latest?access_key=1be2eae5deaa0efae5bd58f71a4004de&format=1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"exchangeratesapi",
+								"io"
+							],
+							"path": [
+								"v1",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "access_key",
+									"value": "1be2eae5deaa0efae5bd58f71a4004de"
+								},
+								{
+									"key": "format",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fixerr",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://data.fixer.io/api/latest?access_key=c3fa9215b0902742e083868958cf9c0c&base=USD",
+							"protocol": "https",
+							"host": [
+								"data",
+								"fixer",
+								"io"
+							],
+							"path": [
+								"api",
+								"latest"
+							],
+							"query": [
+								{
+									"key": "access_key",
+									"value": "c3fa9215b0902742e083868958cf9c0c"
+								},
+								{
+									"key": "base",
+									"value": "USD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sourceCurrency\": \"USD\",\n    \"targetCurrency\": \"TRY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/exchange-rate-app/api/v1/exchange/rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"exchange-rate-app",
+								"api",
+								"v1",
+								"exchange",
+								"rate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

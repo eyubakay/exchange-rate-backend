@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: Exchange Rate Api
+  profiles:
+    active: local
+
+server:
+  port: 8081
+  servlet:
+    context-path: /exchange-rate-app/api/v1
+
+exchange-rate:
+  currencyLayerApiUrl: http://api.exchangeratesapi.io/v1/latest
+  currencyLayerApiAccessKey: 1be2eae5deaa0efae5bd58f71a4004de
+  fixerApiUrl: http://data.fixer.io/api/latest
+  fixerApiAccessKey: c3fa9215b0902742e083868958cf9c0c
+
