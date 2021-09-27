@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 public class MethodLoggingAspect {
 
-    @Around("@annotation(com.integratedfinance.exchangerateservice.app.aop.annotation.Loggable)")
+    @Around(value = "@within(com.integratedfinance.exchangerateservice.app.aop.annotation.Loggable) || @annotation(com.integratedfinance.exchangerateservice.app.aop.annotation.Loggable)")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] signatureArgs = joinPoint.getArgs();
         Object proceed = joinPoint.proceed();

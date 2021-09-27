@@ -1,5 +1,6 @@
 package com.integratedfinance.exchangerateservice.app.service.impl;
 
+import com.integratedfinance.exchangerateservice.app.aop.annotation.Loggable;
 import com.integratedfinance.exchangerateservice.app.config.ApiProperties;
 import com.integratedfinance.exchangerateservice.app.exception.ExternalServiceException;
 import com.integratedfinance.exchangerateservice.app.dto.ExchangeRateDto;
@@ -17,6 +18,7 @@ import java.util.Objects;
  * @author Eyüp Akay
  */
 @Service
+@Loggable
 public class ExchangeRateProviderServiceImpl implements ExchangeRateProviderService {
 
     private static final String ACCESS_KEY_PARAM = "access_key";

@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * @author Eyup Akay
  */
-@Target(ElementType.TYPE)
+@Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Loggable {
 }

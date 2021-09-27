@@ -1,6 +1,7 @@
 package com.integratedfinance.exchangerateservice.app.controller;
 
 import com.integratedfinance.exchangerateservice.app.aop.annotation.DailyExchange;
+import com.integratedfinance.exchangerateservice.app.aop.annotation.Loggable;
 import com.integratedfinance.exchangerateservice.app.api.ExchangeApi;
 import com.integratedfinance.exchangerateservice.app.entity.ExchangeRate;
 import com.integratedfinance.exchangerateservice.app.model.ExchangeRateRequest;
@@ -25,6 +26,7 @@ public class ExchangeApiController implements ExchangeApi {
 
     @Override
     @DailyExchange
+    @Loggable
     public ResponseEntity<ExchangeRateResponse> getExchangeRate(ExchangeRateRequest request) {
         ExchangeRate latestRate = exchangeRepositoryService.getLatest();
 
