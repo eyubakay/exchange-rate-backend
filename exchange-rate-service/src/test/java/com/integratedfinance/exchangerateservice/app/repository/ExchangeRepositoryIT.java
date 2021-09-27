@@ -9,16 +9,17 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
 /**
  * @author Eyüp Akay
  */
-@DataJpaTest
+@SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 class ExchangeRepositoryIT {
-    private static final String BASE_PATH = "src/main/resources/data/";
+    private static final String BASE_PATH = "src/test/resources/data/";
     private static final String FILE_NAME = "base_eur.json";
 
     @Autowired

@@ -17,7 +17,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class ModelToModelParserTests {
 
-    private static final String BASE_PATH = "src/main/resources/data/";
+    private static final String BASE_PATH = "src/test/resources/data/";
     private static final String FILE_NAME = "base_eur.json";
 
     @Mock

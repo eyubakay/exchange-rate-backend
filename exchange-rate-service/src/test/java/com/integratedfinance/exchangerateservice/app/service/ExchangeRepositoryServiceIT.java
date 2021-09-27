@@ -17,7 +17,7 @@ import java.util.Objects;
 @SpringBootTest
 class ExchangeRepositoryServiceIT {
 
-    private static final String BASE_PATH = "src/main/resources/data/";
+    private static final String BASE_PATH = "src/test/resources/data/";
     private static final String FILE_NAME = "base_eur.json";
 
     @Autowired
