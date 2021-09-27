@@ -38,10 +38,11 @@ public class DailyExchangeUpdateAspect {
             ExchangeRate latest = exchangeRepositoryService.getLatest();
             if (Objects.isNull(latest)) {
                 String ratePayload = exchangeRateProviderService.getExchangeRateJson();
-                exchangeRepositoryService.save(PayloadUtil.jsonToObject(ratePayload, ExchangeRateDto.class));
+                ExchangeRateDto dto = PayloadUtil.jsonToObject(ratePayload, ExchangeRateDto.class);
+                exchangeRepositoryService.save(dto);
                 PayloadUtil.savePayload(ratePayload);
                 assert latest != null;
-                exchangeDate = latest.getDate();
+                exchangeDate = LocalDate.parse(dto.getDate());
             }
         }
         Object proceed = joinPoint.proceed();
